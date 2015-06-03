@@ -106,7 +106,8 @@ public class ProyectoFundamentosDeProgramacion {
                                         break;
                                     case 4:
                                         System.out.println("¿Qué desea recomendarnos para mejorar nuestros servicios? (el comentario debe ir sin espacios)");
-                                        recomendacion = entrada.next();
+                                        entrada.nextLine();
+                                        recomendacion = entrada.nextLine();
                                         System.out.println("Muchas gracias, sus comentarios son muy importantes para nosotros");
                                         break;
                                     case 5:
