@@ -76,7 +76,7 @@ public class ProyectoFundamentosDeProgramacion {
                                     case 2:
                                         System.out.println("Ingrese R.U.T destinatario");
                                         rutDestinatario = entrada.nextInt();
-                                        if (rutDestinatario < 999999999 && rutDestinatario > 11111111) {
+                                        if (rutDestinatario < 99999999 && rutDestinatario > 1111111) {
 
                                             if (rutDestinatario == rut) {
 
@@ -105,7 +105,7 @@ public class ProyectoFundamentosDeProgramacion {
                                         System.out.println("Usted dispone de un total de $" + saldo);
                                         break;
                                     case 4:
-                                        System.out.println("¿Qué desea recomendarnos para mejorar nuestros servicios? (el comentario debe ir sin espacios)");
+                                        System.out.println("¿Qué desea recomendarnos para mejorar nuestros servicios?");
                                         entrada.nextLine();
                                         recomendacion = entrada.nextLine();
                                         System.out.println("Muchas gracias, sus comentarios son muy importantes para nosotros");
@@ -124,11 +124,11 @@ public class ProyectoFundamentosDeProgramacion {
 
                     break;
                 case 2:
-                    System.out.print("Ingrese R.U.T(sin guión, -): ");
+                    System.out.print("Ingrese R.U.T(sin guión ni tampoco codigo verificador: ");
                     rutAlmacenado = entrada.nextInt();
                     entrada.nextLine();
 
-                    if (rutAlmacenado < 999999999 && rutAlmacenado > 11111111) {
+                    if (rutAlmacenado < 99999999 && rutAlmacenado > 1111111) {
                         System.out.print("Cree una contraseña: ");
                         claveAlmacenada = entrada.nextLine();
 
