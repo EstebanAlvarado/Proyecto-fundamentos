@@ -22,7 +22,7 @@ public class ProyectoFundamentosDeProgramacion {
         int rut;
         int rutAlmacenado = 0;
         String contraseña;
-        int opcion;
+        int opcion=0;
         int dinero;
         int rutDestinatario;
         int saldo = 10000;
@@ -30,11 +30,12 @@ public class ProyectoFundamentosDeProgramacion {
         String recomendacion;
 
         Scanner entrada = new Scanner(System.in);
-        while (true) {
+        while (opcion !=3) {
             System.out.println("Menú Principal ESTAFABANK");
             System.out.println("Elija qué desea realizar");
             System.out.println(" 1. Ingresar");
             System.out.println(" 2. Crear un usuario");
+            System.out.println(" 3. Salir del sistema");
             opcion = entrada.nextInt();
             switch (opcion) {
                 case 1:
@@ -90,8 +91,8 @@ public class ProyectoFundamentosDeProgramacion {
                                                 }
                                             } else {
                                                 System.out.print("Ingrese monto a depositar: ");
-                                                saldo = entrada.nextInt();
-                                                if (saldo > 0) {
+                                                deposito = entrada.nextInt();
+                                                if (deposito > 0) {
                                                     System.out.println("Monto transferido a la cuenta ingresada, que tenga un buen día");
                                                 } else {
                                                     System.out.println("Monto ingresado no válido");
@@ -145,6 +146,8 @@ public class ProyectoFundamentosDeProgramacion {
                         System.out.println("R.U.T no válido");
                     }
                     break;
+                case 3:
+                    System.out.println("Hasta luego");
             }
         }
 
