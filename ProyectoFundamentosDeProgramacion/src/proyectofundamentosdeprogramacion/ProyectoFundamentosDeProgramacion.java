@@ -1,16 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Integrantes: -Esteban Alvarado 
+               -Mauricio Gutierrez
+               -Diego Padilla
+*/
+
+/*En este programa usted debera crear una cuenta en el banco ESTAFABANK para poder ingresar. Cuando ya este creada se le permitira
+depositar, retirar y consultar saldo, ademas de poder enviar una recomendación al banco.*/
 package proyectofundamentosdeprogramacion;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Esteban
- */
+//Acontinuación el codigo del programa.
 public class ProyectoFundamentosDeProgramacion {
 
     /**
@@ -30,6 +29,7 @@ public class ProyectoFundamentosDeProgramacion {
         String recomendacion;
 
         Scanner entrada = new Scanner(System.in);
+        //En esta linea de codigo utilizamos while con la condicion de que la opcion escogida sea distinta a la opcion numero 3
         while (opcion !=3) {
             System.out.println("Menú Principal ESTAFABANK");
             System.out.println("Elija qué desea realizar");
@@ -37,6 +37,7 @@ public class ProyectoFundamentosDeProgramacion {
             System.out.println(" 2. Crear un usuario");
             System.out.println(" 3. Salir del sistema");
             opcion = entrada.nextInt();
+            //Utilizacion de un switch para definir las distintas opciones del menu del cajero.
             switch (opcion) {
                 case 1:
 
@@ -44,10 +45,13 @@ public class ProyectoFundamentosDeProgramacion {
                     rut = entrada.nextInt();
                     entrada.nextLine();
 
+                    //Utilizacion de if para combrobar que el rut ingresado sea el mismo al momento de crear la cuenta.
                     if (rut == rutAlmacenado) {
                         System.out.print("Ingrese clave: ");
                         clave = entrada.nextLine();
+                        //Utilizacion de if para comprobar que la clave ingresada sea la misma al momento de crear la cuenta.
                         if (clave.equals(claveAlmacenada)) {
+                            //Utilizacion de while que define que si se ingresa la opcion 5 dara por finalizada la operacion y volvera al menu principal de ESTAFABANK.
                             while (opcion != 5) {
                                 System.out.println("Bienvenido, ¿qué es lo que desea realizar?");
                                 System.out.println("1. Retirar dinero");
@@ -61,7 +65,9 @@ public class ProyectoFundamentosDeProgramacion {
                                     case 1:
                                         System.out.println("¿Cuánto desea retirar?: ");
                                         dinero = entrada.nextInt();
+                                        //Verificacion de que el dinero en la cuenta sea mayor a 0.
                                         if (dinero > 0) {
+                                            //Verificacion de que el saldo retirado sea igual o mayor al dinero total de la cuenta.
                                             if (dinero <= saldo) {
                                                 System.out.println("Muchas gracias por preferirnos");
                                                 System.out.println("Puede retirar su dinero");
@@ -77,21 +83,26 @@ public class ProyectoFundamentosDeProgramacion {
                                     case 2:
                                         System.out.println("Ingrese R.U.T destinatario");
                                         rutDestinatario = entrada.nextInt();
+                                        //Se define el maximo y minimo de cifras para el rut del destinatario. 
                                         if (rutDestinatario < 99999999 && rutDestinatario > 1111111) {
 
+                                            //Se comprueba si el rut del destinatario sea igual al rut ingresado.
                                             if (rutDestinatario == rut) {
 
                                                 System.out.print("Ingrese monto a depositar: ");
                                                 deposito = entrada.nextInt();
+                                                //Comprueba que el monto depositado sea mayor a 0.
                                                 if (deposito > 0) {
                                                     System.out.println("Muchas gracias por preferirnos");
                                                     saldo = saldo + deposito;
                                                 } else {
                                                     System.out.println("El monto ingresado no es válido");
                                                 }
+                                            //Si el rut ingresado es distinto se le depositara al rut ingresado
                                             } else {
                                                 System.out.print("Ingrese monto a depositar: ");
                                                 deposito = entrada.nextInt();
+                                                //Comprueba que el monto depositado sea  mayor a 0.
                                                 if (deposito > 0) {
                                                     System.out.println("Monto transferido a la cuenta ingresada, que tenga un buen día");
                                                 } else {
@@ -129,6 +140,7 @@ public class ProyectoFundamentosDeProgramacion {
                     rutAlmacenado = entrada.nextInt();
                     entrada.nextLine();
 
+                    //Se define la cantidad maxima y  minima de cifras que permite el programa para registrar el rut.
                     if (rutAlmacenado < 99999999 && rutAlmacenado > 1111111) {
                         System.out.print("Cree una contraseña: ");
                         claveAlmacenada = entrada.nextLine();
@@ -136,6 +148,7 @@ public class ProyectoFundamentosDeProgramacion {
                         System.out.print("Ingrese la contraseña otra vez: ");
                         contraseña = entrada.next();
 
+                        //Verifica que la primera contraseña ingresada sea igual a la segunda ingresada.  
                         if (contraseña.equals(claveAlmacenada)) {
 
                             System.out.println("Gracias por crear una cuenta en banco ESTAFABANK");
