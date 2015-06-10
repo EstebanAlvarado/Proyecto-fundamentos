@@ -3,8 +3,11 @@
                -Diego Padilla
 */
 
-/*En este programa usted debera crear una cuenta en el banco ESTAFABANK para poder ingresar. Cuando ya este creada se le permitira
-depositar, retirar y consultar saldo, ademas de poder enviar una recomendación al banco.*/
+/*En este programa usted debera crear una cuenta en el cajero automático portátil del banco ESTAFABANK, totalmente innovador
+a todo lo que has visto anteriormente, para poder ingresar. Cuando ya este creada su cuenta, se le permitira realizar 4 opciones:
+
+Depositar, retirar y consultar saldo, ademas de poder enviar una recomendación al banco, una opción que es única y totalmente
+innovadora, no la vas a poder ver en ningún otro cajero automático.*/
 package proyectofundamentosdeprogramacion;
 
 import java.util.Scanner;
@@ -60,7 +63,7 @@ public class ProyectoFundamentosDeProgramacion {
                                 System.out.println("4. Enviar una recomendación a nuestro banco");
                                 System.out.println("5. Salir al Menú Principal");
                                 opcion = entrada.nextInt();
-
+                                //Se usa otra vez la estructura swtich para visualizar las opciones que tiene el usuario al ingresar con su usuario.
                                 switch (opcion) {
                                     case 1:
                                         System.out.println("¿Cuánto desea retirar?: ");
